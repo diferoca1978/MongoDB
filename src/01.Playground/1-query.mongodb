@@ -1,0 +1,7 @@
+//* Use the reservated woord (use) to select the colection that you want connect.
+use('sample_training');
+
+//* This the query to document
+
+db.zips.find({ state: 'NY' });
+//db.zips.find({ state: 'NY' }).count();
