@@ -1,11 +1,7 @@
 //* Use the reservated woord (use) to select the colection that you want connect.
-use('sample_training');
+use('Platzi-store-db');
 
 //* This the query to document
 
-//* Db Version command
-
-db.version();
-
-//db.zips.find({ state: 'NY' });
+db.products.find({ price: 1200 });
 //db.zips.find({ state: 'NY' }).count();
