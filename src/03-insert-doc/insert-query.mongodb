@@ -1,0 +1,14 @@
+use('platziStore');
+
+db.products.insertOne({
+  name: 'Product 1',
+  price: 1500,
+});
+db.products.insertOne({
+  name: 'Product 2',
+  price: 1000,
+});
+db.products.insertOne({
+  name: 'Product 3',
+  price: 1700,
+});

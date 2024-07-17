@@ -1,0 +1,20 @@
+use('platziStore');
+
+db.products.updateOne(
+  { _id: ObjectId('6697c1a0d3a4f1ba1920b0ad') },
+  { $set: { price: 900 } }
+);
+
+db.products.updateOne(
+  { _id: ObjectId('6697c1a0d3a4f1ba1920b0ad') },
+  { $inc: { price: 1200 } }
+);
+
+db.products.find();
+
+//* Summary:
+// use the ObjectId() function to pass an _id as a query to modify, if the _id has given to Mongo.
+
+// Use the $set operator to update one or more properties of a document, also can add more properties to a document.
+
+// Use the $inc operator to increment the stock field. For instance the price property.

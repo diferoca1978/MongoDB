@@ -1,0 +1,30 @@
+use('platziStore');
+
+//* Command to delete all documents created in a collection
+db.products.drop();
+
+//* Command to add many documents at the same time, this documents must be inside an array.
+db.products.insertMany([
+  {
+    name: 'Product 1',
+    price: 1200,
+  },
+  {
+    name: 'Product 2',
+    price: 1200,
+  },
+  {
+    name: 'Product 3',
+    price: 1200,
+  },
+  {
+    name: 'Product 4',
+    price: 1200,
+  },
+  {
+    name: 'Product 5',
+    price: 1200,
+  },
+]);
+
+db.products.find();
