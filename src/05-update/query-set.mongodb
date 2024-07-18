@@ -1,0 +1,37 @@
+use('sample_training');
+
+//* With $set operator not only can change the value of an attribute, also can add one or many attributes.
+
+// db.zips.updateMany(
+//   {city:'CLEVELAND'},
+
+//   {
+//     $set: {
+//       my_data: '1mb'
+//     }
+//   }
+// );
+
+//* With $rename operator can change the name of the an attribuite, without change the value.
+
+// db.zips.updateMany(
+//   { city: 'CLEVELAND' },
+
+//   {
+//     $rename: {
+//       my_data: 'data',
+//     },
+//   }
+// );
+
+//* With $unset operator can delete an attribuite.
+
+db.zips.updateMany(
+  { city: 'CLEVELAND' },
+
+  {
+    $unset: {
+      data: '',
+    },
+  }
+);
