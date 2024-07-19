@@ -1,0 +1,22 @@
+use('platziStore');
+
+//* If we don't send a query mongo infer that have to work in all documents.
+// !!! not matter if some document have an element with the same value into the array this operator insert it again.
+
+db.inventory.updateMany(
+  {},
+  {
+    $push: {
+      tags: 'button',
+    },
+  }
+);
+
+db.inventory.updateMany(
+  {},
+  {
+    $pull: {
+      tags: 'button',
+    },
+  }
+);

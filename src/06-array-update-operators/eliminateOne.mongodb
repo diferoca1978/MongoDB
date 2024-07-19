@@ -1,0 +1,12 @@
+use('platziStore');
+
+db.inventory.updateOne(
+  { _id: 3 },
+  {
+    //* Pull Removes an item from an array that matches a specified condition.
+    // !!!important if there are two elements with the same value this operator will eliminates both.
+    $pull: {
+      tags: 'button',
+    },
+  }
+);

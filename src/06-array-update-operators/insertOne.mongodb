@@ -1,0 +1,11 @@
+use('platziStore');
+
+db.inventory.updateOne(
+  { _id: 3 },
+  {
+    //* Push operator to insert a new element inside the array.
+    $push: {
+      tags: 'button',
+    },
+  }
+);

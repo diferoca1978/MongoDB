@@ -1,0 +1,37 @@
+use('platziStore');
+
+// db.inventory.updateOne(
+//   { _id: 3 },
+//   {
+//     //* to insert many elements inside the array we need to use $push and $each operator in combination.
+//     $push: {
+//       tags: {
+//         $each: ['button', 'cellphone'],
+//       },
+//     },
+//   }
+// );
+
+db.inventory.updateOne(
+  { _id: 3 },
+  {
+    //* But to insert many elements inside the array ensure that the items are unique we need to use $addToSet and $each operator in combination.
+    $addToSet: {
+      tags: {
+        $each: ['school', 'button', 'cellphone', 'shirt', 'book'],
+      },
+    },
+  }
+);
+
+// db.inventory.updateOne(
+//   { _id: 3 },
+//   {
+//     //* To delete many elements inside the array we need to use $pull and $in operator in combination.
+//     $pull: {
+//       tags: {
+//         $in: ['button', 'cellphone'],
+//       },
+//     },
+//   }
+// );
