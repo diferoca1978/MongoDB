@@ -1,0 +1,3 @@
+use('platziStore');
+
+db.iot.find();

@@ -1,0 +1,33 @@
+// Note: the Operator upsert allow us insert a new document if it not yet exists or update if it exists.
+
+// To this case: If the sensor not exists yet to this date,so through the upsert operator set in true mongo detect if it doesn't exists, create it or if it exists update it.
+
+use('platziStore');
+
+// db.iot.updateOne(
+//   {
+//     sensor: 'A001',
+//     date: '2022-01-04',
+//   },
+//   {
+//     $push: {
+//       readings: 2226,
+//     },
+//   },
+//   {
+//     upsert: true,
+//   }
+// );
+
+// To delete the las element into our array.
+db.iot.updateOne(
+  {
+    sensor: 'A001',
+    date: '2022-01-04',
+  },
+  {
+    $pop: {
+      readings: 1,
+    },
+  }
+);
