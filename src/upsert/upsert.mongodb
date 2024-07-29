@@ -19,7 +19,7 @@ use('platziStore');
 //   }
 // );
 
-// To delete the las element into our array.
+// To delete the last element into our array.
 db.iot.updateOne(
   {
     sensor: 'A001',
