@@ -1,0 +1,22 @@
+use('platziStore');
+
+// Using $gt greater than operator
+//db.inventory.find({ qty: { $gt: 20 } });
+
+// Using $gte greater than or equal operator
+//db.inventory.find({ qty: { $gte: 35 } });
+
+// Using $lt (<) less than operator
+//db.inventory.find({ qty: { $lt: 35 } });
+
+// Using $lte (<=) less than or equal operator
+//db.inventory.find({ qty: { $lte: 35 } });
+
+// Using these in combination to obtain a range
+//db.inventory.find({ qty: { $lt: 35, $gte: 20 } });
+
+// Using to search in a subdocument
+// db.inventory.find({ 'item.code': '123', qty: { $lt: 35, $gte: 20 } });
+
+// Using to search in a subdocument
+db.inventory.find({ 'item.code': { $ne: '123' }, qty: { $lt: 35, $gte: 20 } });

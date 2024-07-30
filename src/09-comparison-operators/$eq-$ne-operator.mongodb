@@ -1,0 +1,10 @@
+use('platziStore');
+
+// Using $eq equal operator
+// db.inventory.find({ qty: { $eq: 20 } });
+
+// Query to embedded document
+// db.inventory.find({ 'item.name': 'ab' });
+
+// Using $ne not equal operator
+db.inventory.find({ qty: { $ne: 20 } });
