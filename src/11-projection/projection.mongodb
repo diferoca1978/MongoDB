@@ -1,0 +1,18 @@
+use('platziStore');
+
+//? The projections are used to show or not show any information that we want. To indicate that show only the properties that we want we can use a (1) number, the rest of the properties not will be showing, the only exeption is the id property thal allways come.
+//* Note: if we want to supress the id we can use the (0) number.
+
+// db.inventory.find(
+//   //query
+//   { qty: { $gt: 25 } },
+//   // projection
+//   { item: 1 }
+// );
+
+db.inventory.find(
+  //query
+  { qty: { $gt: 25 } },
+  // projection
+  { item: 1, _id: 0 }
+);

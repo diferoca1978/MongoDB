@@ -1,0 +1,15 @@
+use('platziStore');
+
+//db.inventory.find({ 'item.description': 'Single line description.' });
+
+//? To say that search whitout matters if the word that we're searching is lowercase or upercase might be add an (i) character at the end of the query.
+// db.inventory.find({ 'item.description': { $regex: /LINE/i } });
+
+//? To say that find a document that into any property search a value that ends with some word using the ($) symbol after the word.
+// db.inventory.find({ 'item.description': { $regex: /line$/i } });
+
+//? To say that find a document that into any property search a value that start with some word using the (^) symbol before the word.
+// db.inventory.find({ 'item.description': { $regex: /^single/i } });
+
+//? To say that find a document that into any property search a value that for instance is a paragraph with multiple line breaks. To do that we can use the (m) character to indicate that the query is multiline.
+db.inventory.find({ 'item.description': { $regex: /^s/im } });
