@@ -1,0 +1,23 @@
+use('platziStore');
+
+//* $in operator can be used to make queries both values and arrays
+//db.inventory.find({ qty: { $in: [20, 25] } });
+// db.inventory.find({ tags: { $in: ['book', 'electronics'] } });
+
+//* $nin operator works oppsite to $in operator bringing all results that not contain the specified query.
+// db.inventory.find({ qty: { $nin: [20, 25] } });
+// db.inventory.find({ tags: { $nin: ['book', 'electronics'] } });
+
+//!Operators only for arrays
+
+//* The $all operator search into an array the elements that we're indicated it's similar to and operator.
+// db.inventory.find({ tags: { $all: ['book', 'appliance'] } });
+
+//* $size operrator which show us the size of the array, also it allow through a numbre the size of the array that we can find.
+// db.inventory.find({ tags: { $size: 2 } });
+
+//* $elemMatch operator which is useful to find properties of objects embedded into an array. Useful to make more specific searches.
+
+db.survey.find({
+  results: { $elemMatch: { product: 'xyz', score: { $gte: 7 } } },
+});
